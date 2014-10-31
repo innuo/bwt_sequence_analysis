@@ -35,7 +35,7 @@ class BWT:
         tf_in.close()
 
         "needs to be improved, obviously"
-        os.system("../c/sarray %s %s %d" % (fin, fout, self.n + 1))
+        os.system("../c/sarray %s %s %d" % (fin, fout, self.n))
 
         tf_out = open(fout, "r")
         for i in range(self.n + 1):
@@ -49,7 +49,7 @@ class BWT:
         self.suffixArray()
 
         for i in self.output_int_list:
-             if i > 0 and i < self.n:
+             if i > 0:
                 self.bwt.append(string_list[i-1])
 
         return self.bwt
